@@ -108,7 +108,7 @@ img {
 
 <!-- Music -->
 <audio id="music" loop>
-<source src="music.mp3" type="audio/mpeg">
+<source src="song.mp3" type="audio/mpeg">
 </audio>
 
 <!-- Opening -->
@@ -199,14 +199,23 @@ for(let i=0;i<20;i++){
     document.body.appendChild(f);
 }
 
-// open
-document.getElementById("openBtn").onclick=function(){
+// 🔔 Bell auto play on first touch (page open tarvata first tap)
+document.addEventListener("click", function () {
+    let bell = document.getElementById("bell");
+    bell.play();
+}, { once: true });
+
+
+// 🎵 Button click → main open + song play
+document.getElementById("openBtn").onclick = function () {
+
     document.getElementById("opening").style.display="none";
     document.getElementById("main").style.display="block";
 
-    document.getElementById("bell").play();
-    document.getElementById("music").play();
-}
+    let song = document.getElementById("song");
+    music.play();
+};
+
 
 // countdown
 var date=new Date("May 13, 2026 12:00:00").getTime();
@@ -224,6 +233,5 @@ setInterval(()=>{
 },1000);
 
 </script>
-
 </body>
 </html>
