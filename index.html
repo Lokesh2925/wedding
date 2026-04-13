@@ -65,7 +65,17 @@ body {
 #main {
     display:none;
     animation:fadeIn 1s;
+
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('images/ag.jpg');   
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height:100vh;
 }
+
 
 @keyframes fadeIn {
     from {opacity:0;}
@@ -75,6 +85,8 @@ body {
 .section {
     padding:50px;
     text-align:center;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
 }
 
 #countdown {
@@ -94,6 +106,10 @@ img {
     width:220px;
     border-radius:15px;
     margin:10px;
+}
+
+.flower {
+    z-index: 2;
 }
 
 </style>
